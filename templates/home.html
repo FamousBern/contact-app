@@ -1,0 +1,22 @@
+{% extends 'base.html' %} {% block body%}
+<style>
+  .banner {
+    height: 80vh;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+      url(static/img/laptop3.jpg);
+    background-size: cover;
+    background-position: center;
+    color: #fff;
+  }
+</style>
+<div class="container">
+  <main role="main" class="inner cover">
+    <h1 class="cover-heading">I Use Python Programming Language.</h1>
+    <p class="lead">I Develop Web applications in Python.</p>
+  </main>
+</div>
+<div class="banner text-center">
+  <h1>Flask App</h1>
+  <p>This web application is developed by Bern.</p>
+</div>
+{% endblock %}

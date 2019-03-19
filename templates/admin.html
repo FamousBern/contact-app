@@ -1,0 +1,41 @@
+{% extends 'base.html' %} {% block body %}
+
+<div class="row">
+  <div class="col-md-4">
+    <div class="jumbotron bg-info text-center">
+      <h3 style="color:white;">Dashboard</h3>
+    </div>
+  </div>
+  <div class="col-md-8">
+    <div class="jumbotron bg-info text-center">
+      <h3 style="color:white;">Messages</h3>
+    </div>
+    <table class="table table-stripped">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Title</th>
+          <th>Message</th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for me in mem %}
+        <tr>
+          <td>{{ me.id }}</td>
+          <td>{{ me.title }}</td>
+          <td>{{ me.content }}</td>
+          <td>
+            <form action="{{ url_for('delete', id=me.id) }}" methods="POST">
+              <input type="hidden" name="_method" value="DELETE" />
+              <input type="submit" value="Delete" class="btn btn-danger" />
+            </form>
+          </td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+</div>
+
+{% endblock %}
